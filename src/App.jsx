@@ -11,21 +11,24 @@ import FAQ from './components/FAQ'
 import Subscribe from './components/Subscribe'
 import Footer from './components/Footer'
 import Contacts from './components/Contacts'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-      <>
-      <Contacts/>
-      <Hero/>
-      <BrandContainer/>
-      <AppFeatures/>
-      <HowDoesItWork/>
-      <MakeMoney/>
-      <Testimonies/>
-      <FAQ/>
-      <Subscribe/>
-      <Footer/>
-      </>
+      <div>
+        <header className='hero'>
+          <Navbar/>
+          <Hero/>
+        </header>
+        <BrandContainer/>
+        <AppFeatures/>
+        <HowDoesItWork/>
+        <MakeMoney/>
+        <Testimonies/>
+        <FAQ/>
+        <Subscribe/>
+        <Footer/>
+      </div>
   )
 }
 

@@ -1,6 +1,29 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Navbar = () => {
+
+    const [darkLight, setDarkLight] = useState(false)
+
+    const toggleDarkMode = ()=>{
+        const masterDad = document.documentElement
+
+        setDarkLight((darkLight) => {const newDarkLight = !darkLight;
+            if(newDarkLight) {masterDad.classList.add('dark')}
+    
+            else{masterDad.classList.remove('dark')}
+
+            return newDarkLight
+        }
+
+        )
+        
+        
+        
+        
+
+    }
+
+
   return (
     <div className="container">
                 
@@ -20,7 +43,7 @@ const Navbar = () => {
                 <div id="dark-mode-settings" className="dark-settings">
                     <span id="dark-mode"> Dark Mode</span>
                     <label className="switch">
-                        <input type="checkbox"/>
+                        <input onChange={toggleDarkMode} type="checkbox"/>
                         <span className="slider round"></span>
                     </label>
                 </div>

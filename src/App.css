@@ -804,14 +804,23 @@ header .container{
   }
   .subscribe-text h2 span{
     display: none;
-
+    
+  }
+  
+  .subscribe-error{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding-top: 1rem;
+   /* gap: .8rem; */
+   
   }
 
   .subscribe-input{
     width: 100%;
     position: relative;
   }
-
+  
   .user-input{
     border: 1px solid var(--color-gray-400);
     border-radius: 8px 0px 0px 8px;
@@ -834,7 +843,18 @@ header .container{
     font-size: 1rem;
     justify-content: center;
     width: 40%;
+    cursor: pointer;
   }
+  .btn-subscribe:hover{
+    background-color: hsl(239, 84%, 64%);
+    transition: 100ms;
+  }
+
+  .btn-subscribe:active{
+    background-color: hsl(239, 84%, 60%);
+    transition: 100ms;
+  }
+  
 
   .letter-icon{
     position: absolute;
@@ -842,6 +862,14 @@ header .container{
     left: 1.5rem;
     transform: translate(-50%, -50%);
   }
+
+  .error-msg{
+    color: red;
+   font-size: .8rem;
+   padding-left: .5rem;
+   padding-top: .2rem;
+  }
+
 
   .footer{
     display: flex;

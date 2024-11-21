@@ -1,9 +1,6 @@
 import React from 'react'
-import Navbar from './Navbar'
 const Hero = () => {
   return (
-    <header className="hero">
-            <Navbar/>
     
             <div className="section-manage">
                 <h1 className="display4" id="manage">
@@ -47,8 +44,7 @@ const Hero = () => {
                 </div>
             </div>
             
-            
-        </header>
+    
   )
 }
 
