@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Question from './Question'
 
 const FAQ = () => {
+
+    const [FAQ, setFAQ] = useState([])
+
+    const getFAQS = async ()=>{
+        const res = await fetch('https://win24-assignment.azurewebsites.net/api/faq')
+        const data = await res.json()
+        setFAQ(data)
+    }
+
+    useEffect(()=>{
+        getFAQS()
+    }, [])
+
   return (
     <section>
                 <div className="faq mt4">
@@ -29,48 +43,15 @@ const FAQ = () => {
     
                     </div>
                     
+{/* ACCORDION ACCORDION ACCORDION ACCORDION ACCORDION ACCORDION ACCORDION ACCORDION ACCORDION ACCORDION ACCORDION ACCORDION  */}
+
                     <ul className="ul-style">
-                        <li className="li-style">
-                            <label htmlFor="first">Is any of my personal information
-                                stored in the App? <span className="arrowicon">&#x3e;</span></label>
-                            <input type="checkbox" name="accordion" id="first" defaultChecked/>
-                            <div className="answer font-s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quae modi molestias dolorem aut quam velit molestiae nobis corporis porro.</div>
-    
-                        </li>
-                        <li className="li-style">
-                            <label htmlFor="second">What formats can I download my
-                                transaction history in?<span>&#x3e;</span></label>
-                            <input type="checkbox" name="accordion" id="second"/>
-                            <div className="answer font-s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quae modi molestias dolorem aut quam velit molestiae nobis corporis porro.</div>
-    
-                        </li>
-                        <li className="li-style">
-                            <label htmlFor="third">Can I schedule future transfers?<span>&#x3e;</span></label>
-                                <input type="checkbox" name="accordion" id="third"/>
-                            <div className="answer font-s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quae modi molestias dolorem aut quam velit molestiae nobis corporis porro.</div>
-    
-                        </li>
-                        <li className="li-style">
-                            <label htmlFor="fourth">When can I use Banking App
-                                services?<span>&#x3e;</span></label>
-                            <input type="checkbox" name="accordion" id="fourth"/>
-                            <div className="answer font-s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quae modi molestias dolorem aut quam velit molestiae nobis corporis porro.</div>
-    
-                        </li>
-                        <li className="li-style">
-                            <label htmlFor="fifth">Can I create my own password that is
-                                easy for me to remember?<span>&#x3e;</span></label>
-                            <input type="checkbox" name="accordion" id="fifth"/>
-                            <div className="answer font-s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quae modi molestias dolorem aut quam velit molestiae nobis corporis porro.</div>
-    
-                        </li>
-                        <li className="li-style">
-                            <label htmlFor="sixth">What happens if I forget or lose my
-                                password?<span>&#x3e;</span></label>
-                            <input type="checkbox" name="accordion" id="sixth"/>
-                            <div className="answer font-s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quae modi molestias dolorem aut quam velit molestiae nobis corporis porro.</div>
-    
-                        </li>
+                        {
+                            FAQ.map((question) => (
+                                <Question key={question.id} question={question}/>
+
+                            ))
+                        }
                     </ul>
                 </div>
             </section>

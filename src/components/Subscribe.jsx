@@ -30,7 +30,9 @@ const Subscribe = () => {
         if(errors.length === 0)return
         if(errors)return
         
-        return ('validerat!');
+        return console.log('validerat');
+        
+        
         
     }
 

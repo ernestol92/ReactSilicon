@@ -718,25 +718,36 @@ header .container{
 }
 
 
-.ul-style label + input[type="checkbox"]{
-  display: none;
+.li-style {
+  padding: 0rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  min-width: 600px;
 }
 
-.ul-style label span{
+.question-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.answer {
+  padding: 0.5rem;
+  transition: opacity .5s ease;
+  width: 550px;
+}
+
+.arrowicon {
+  display: inline-block;
+  transition: transform .3s ease;
+}
+
+.arrowicon.open {
   transform: rotate(90deg);
 }
 
-  .answer{
-  line-height: 2rem;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s;
-   
-}
-
-.ul-style label + input[type="checkbox"]:checked + .answer{
-  max-height: 400px;
-}
 
 .cardcontact{
   width: 12.5rem;
